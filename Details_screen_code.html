@@ -1,0 +1,443 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Dipesh — Senior iOS Engineer | Virtual Employee Directory</title>
+<!-- Tailwind CSS CDN with forms & container queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace']
+          },
+          colors: {
+            notion: {
+              bg: '#FFFFFF',
+              sidebar: '#FBFBFA',
+              border: '#EDEDED',
+              borderDark: '#E0E0E0',
+              text: '#37352F',
+              muted: '#787774',
+              hover: '#F1F1EF',
+              callout: '#F7F6F3',
+              accentYellow: '#FCD34D',
+              badgeYellow: '#FEF3C7',
+              pillBg: '#F3F4F6'
+            }
+          }
+        }
+      }
+    }
+  </script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style data-purpose="base-styling">
+    body {
+      color: #37352F;
+      background-color: #FFFFFF;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    ::selection {
+      background-color: #CDE6FE;
+      color: #1E3A8A;
+    }
+  </style>
+<style data-purpose="notion-toggle-details">
+    /* Native smooth animation for Notion-style details/summary toggles */
+    details > summary {
+      list-style: none;
+    }
+    details > summary::-webkit-details-marker {
+      display: none;
+    }
+    details[open] .arrow-indicator {
+      transform: rotate(90deg);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col bg-[#FFFFFF] text-[#37352F] antialiased">
+<!-- BEGIN: TopNavigation -->
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-[#EDEDED]" data-purpose="site-navigation">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between gap-4">
+<!-- Brand & Notion-style Breadcrumb -->
+<div class="flex items-center gap-2.5 text-sm overflow-hidden whitespace-nowrap">
+<a class="flex items-center gap-2 font-semibold text-black hover:opacity-80 transition-opacity" href="#">
+<!-- Minimalist Notion-esque Directory Icon -->
+<span class="w-6 h-6 rounded bg-[#2F3437] text-white flex items-center justify-center text-xs font-mono font-bold tracking-tighter">VE</span>
+<span class="hidden sm:inline font-medium tracking-tight">VirtualEmployee</span>
+</a>
+<span class="text-[#A1A1A1]">/</span>
+<a class="text-[#787774] hover:text-[#37352F] hover:bg-[#F1F1EF] px-1.5 py-0.5 rounded transition" href="#">iOS Engineers</a>
+<span class="text-[#A1A1A1]">/</span>
+<span class="font-medium text-[#37352F] truncate">Dipesh</span>
+</div>
+<!-- Quick Action Navigation Right -->
+<div class="flex items-center gap-3">
+<button class="hidden md:inline-flex items-center gap-1.5 text-xs text-[#787774] hover:text-[#37352F] px-2.5 py-1.5 rounded-md hover:bg-[#F1F1EF] border border-[#EDEDED] transition" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          Search engineers...
+          <kbd class="ml-1 text-[10px] text-gray-400 bg-gray-100 px-1 rounded">⌘K</kbd>
+</button>
+<a class="inline-flex items-center justify-center text-xs font-medium bg-[#FFDD00] hover:bg-[#F2D000] text-gray-900 px-3.5 py-1.5 rounded shadow-sm border border-black/10 transition active:scale-[0.98]" href="#trial-section">
+          Start 2-Week Trial
+        </a>
+</div>
+</div>
+</header>
+<!-- END: TopNavigation -->
+<!-- BEGIN: MainContent -->
+<main class="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+<!-- Notion Minimal Cover Graphic -->
+
+<!-- Candidate Profile Header Row -->
+<section class="relative mb-8 px-2 sm:px-4 pt-2" data-purpose="candidate-hero">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#EDEDED]">
+<!-- Profile Identity & Photo -->
+<div class="flex flex-col sm:flex-row items-start sm:items-end gap-5">
+<!-- Spotlight Avatar (from provided image) -->
+<div class="relative group">
+<div class="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden ring-4 ring-white shadow-md border border-[#E5E5E5] bg-gray-100">
+<img alt="Dipesh - Senior iOS Engineer" class="w-full h-full object-cover object-[65%_35%] scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzqS8_ulRP0rkYP2lHMrR8BLQwucZxMJ3EWzOtW44haumCDx6XD8PytfKNi3YeI7etlLAO0AHtZeK5fvl-8Ea5DRtxNkSd3Q2Q4B8qVSEiEH3boBtNydpTvt0dbtS3rUQ3Wd9EMGLeZG0EHCS4PHdZyoqcRyZXb85s8siPGVNkBAzQextgH-arkWWM-_mII6ChMxwVeDXOQg3ay2iOO_mZGLD0qNMGV1kj6AEqFYjBR2avDi5h0aHNdrK0C7yP775hFWKv8tTJHyZy">
+</div>
+<span class="absolute bottom-1 right-1 bg-white p-0.5 rounded-full shadow">
+<svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path>
+</svg>
+</span>
+</div>
+<!-- Names & Badges -->
+<div class="space-y-1.5">
+<div class="flex flex-wrap items-center gap-2">
+<h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-[#2F3437]">Dipesh</h1>
+<span class="bg-[#EFF6FF] text-[#1D4ED8] text-xs font-medium px-2.5 py-0.5 rounded-full border border-blue-200 flex items-center gap-1">
+<svg class="w-3 h-3 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg>
+                VE Certified Senior
+              </span>
+<span class="bg-emerald-50 text-emerald-700 text-xs font-medium px-2.5 py-0.5 rounded-full border border-emerald-200 flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
+                Ready to start tomorrow
+              </span>
+</div>
+<p class="text-sm sm:text-base text-[#6B7280] font-normal leading-relaxed">
+              Senior iOS Engineer • 6+ Years Experience • Swift &amp; SwiftUI Specialist
+            </p>
+<div class="flex flex-wrap items-center gap-y-1 gap-x-4 text-xs text-[#787774] pt-0.5">
+<span class="flex items-center gap-1">
+<svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                Indore / Bangalore (IST) • 4-hr US/EU Overlap
+              </span>
+<span class="flex items-center gap-1">
+<svg class="w-3.5 h-3.5 text-amber-500 fill-amber-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                5.0 Rating (42 verified projects)
+              </span>
+<span class="flex items-center gap-1">
+<svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                Full-Time Dedicated (160 hrs/mo)
+              </span>
+</div>
+</div>
+</div>
+<!-- Hero Actions -->
+<div class="flex flex-wrap sm:flex-nowrap items-center gap-2.5">
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#FFDD00] hover:bg-[#F3D200] text-gray-900 font-semibold text-sm rounded-lg shadow-sm border border-yellow-500/30 transition hover:shadow" href="#trial-section">
+<svg class="w-4 h-4 text-gray-900" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            Start in 1-Click
+          </a>
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-2.5 bg-white hover:bg-[#F7F7F6] text-gray-700 font-medium text-sm rounded-lg border border-[#D1D5DB] transition" onclick="alert('Interview booking modal opened for Dipesh')" type="button">
+<svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            Schedule Interview
+          </button>
+<button class="p-2.5 text-gray-600 hover:text-gray-900 bg-white hover:bg-gray-100 rounded-lg border border-gray-300 transition" title="Share candidate profile" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</button>
+</div>
+</div>
+</section>
+<!-- Notion Callout Box: Zero Risk Trial -->
+<div class="mb-8 p-4 sm:p-5 rounded-xl bg-[#FFFBEB] border border-[#FDE68A] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4" id="trial-section">
+<div class="flex items-start gap-3">
+<span class="text-2xl select-none">⚡️</span>
+<div>
+<h4 class="text-sm font-semibold text-[#92400E]">2-Week Risk-Free Trial Period</h4>
+<p class="text-xs sm:text-sm text-[#B45309] mt-0.5">Work with <strong class="">Dipesh</strong> for up to 10 working days. Start without a card, contract or payment. If not fully satisfied, you owe nothing.</p>
+</div>
+</div>
+<div class="shrink-0 flex items-center gap-2 w-full sm:w-auto">
+<button class="w-full sm:w-auto text-xs font-semibold px-4 py-2 bg-[#F59E0B] hover:bg-[#D97706] text-white rounded-md transition shadow-sm" type="button">
+          Hire Dipesh Risk-Free
+        </button>
+</div>
+</div>
+<!-- Main Two-Column Notion Style Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Column: Core Technical Details & Experience (8 cols) -->
+<div class="lg:col-span-8 space-y-8">
+<!-- SECTION: Professional Summary -->
+<section class="space-y-3" data-purpose="professional-summary">
+<div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-gray-400">
+<span class="">01</span>
+<span class="">/</span>
+<span class="">About Dipesh</span>
+</div>
+<h2 class="text-lg font-bold text-[#2F3437] flex items-center gap-2">
+<span class="">👨‍💻</span> Senior iOS &amp; Swift Specialist
+          </h2>
+<div class="prose prose-sm text-[#4A4843] leading-relaxed space-y-3 font-normal">
+<p class="">
+              Dipesh is a passionate Senior iOS Engineer with over 6 years of experience building resilient, performant consumer and enterprise iOS applications. He specializes in scalable Swift codebases, modern reactive state management using Combine &amp; SwiftUI, and rigorous memory optimization.
+            </p>
+<p class="">
+              Throughout his career, Dipesh has guided mission-critical products through the App Store lifecycle, architecting modular applications with Clean MVVM-C architectures and reducing crash-free user rates to over 99.8%.
+            </p>
+</div>
+</section>
+<!-- SECTION: Interactive Accordions (Education, Skills, Languages) -->
+<section class="space-y-4" data-purpose="expandable-profile-data">
+<!-- Accordion 1: Education (Open by default matching image) -->
+<details class="group border border-[#EDEDED] rounded-xl overflow-hidden bg-white shadow-[0_1px_3px_rgba(0,0,0,0.02)]" open="">
+<summary class="flex items-center justify-between p-4 cursor-pointer select-none bg-white hover:bg-[#FAFAFA] transition">
+<div class="flex items-center gap-3">
+<span class="w-7 h-7 rounded-lg bg-orange-50 text-orange-600 flex items-center justify-center text-sm font-semibold">🎓</span>
+<span class="font-semibold text-sm sm:text-base text-[#2F3437]">Education</span>
+<span class="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">2 Degrees</span>
+</div>
+<svg class="w-4 h-4 text-gray-400 arrow-indicator transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</summary>
+<div class="px-5 pb-5 pt-2 border-t border-[#EDEDED] divide-y divide-gray-100 space-y-3">
+<!-- Item 1: MCA -->
+<div class="pt-3 flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+<div>
+<h4 class="text-sm font-semibold text-[#2F3437]">MCA in Computer Science Engineering</h4>
+<p class="text-xs text-gray-500">VIT University Vellore</p>
+</div>
+<div class="text-xs font-mono text-gray-400 font-medium whitespace-nowrap">
+                  2013 – 2016
+                </div>
+</div>
+<!-- Item 2: B.Sc -->
+<div class="pt-3 flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+<div>
+<h4 class="text-sm font-semibold text-[#2F3437]">B.SC in Computer Science Engineering</h4>
+<p class="text-xs text-gray-500">Christian Eminent College Indore</p>
+</div>
+<div class="text-xs font-mono text-gray-400 font-medium whitespace-nowrap">
+                  2009 – 2012
+                </div>
+</div>
+</div>
+</details>
+<!-- Accordion 2: Skills & Tech Domains -->
+<details class="group border border-[#EDEDED] rounded-xl overflow-hidden bg-white shadow-[0_1px_3px_rgba(0,0,0,0.02)]" open="">
+<summary class="flex items-center justify-between p-4 cursor-pointer select-none bg-white hover:bg-[#FAFAFA] transition">
+<div class="flex items-center gap-3">
+<span class="w-7 h-7 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center text-sm font-semibold">🛠️</span>
+<span class="font-semibold text-sm sm:text-base text-[#2F3437]">Skills &amp; Technical Domains</span>
+<span class="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">12 Verified</span>
+</div>
+<svg class="w-4 h-4 text-gray-400 arrow-indicator transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</summary>
+<div class="px-5 pb-5 pt-3 border-t border-[#EDEDED] space-y-4">
+<div>
+<p class="text-xs font-medium text-gray-400 uppercase tracking-wider mb-2">Primary Core Stack</p>
+<div class="flex flex-wrap gap-2">
+<span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-[#F3F4F6] text-gray-800 border border-gray-200">
+<span class="w-1.5 h-1.5 rounded-full bg-orange-500 mr-1.5"></span> Swift (Expert)
+                  </span>
+<span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-[#F3F4F6] text-gray-800 border border-gray-200">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-500 mr-1.5"></span> SwiftUI &amp; Combine
+                  </span>
+<span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-[#F3F4F6] text-gray-800 border border-gray-200">
+<span class="w-1.5 h-1.5 rounded-full bg-purple-500 mr-1.5"></span> MVVM-C Architecture
+                  </span>
+<span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-[#F3F4F6] text-gray-800 border border-gray-200">
+<span class="w-1.5 h-1.5 rounded-full bg-slate-500 mr-1.5"></span> Objective-C
+                  </span>
+</div>
+</div>
+<div>
+<p class="text-xs font-medium text-gray-400 uppercase tracking-wider mb-2">Engineering &amp; Tooling</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2.5 py-1 rounded-md text-xs font-normal bg-white text-gray-700 border border-gray-200">UI Thread Profiling</span>
+<span class="px-2.5 py-1 rounded-md text-xs font-normal bg-white text-gray-700 border border-gray-200">Memory Leak Detection (Instruments)</span>
+<span class="px-2.5 py-1 rounded-md text-xs font-normal bg-white text-gray-700 border border-gray-200">CoreData &amp; Offline Sync</span>
+<span class="px-2.5 py-1 rounded-md text-xs font-normal bg-white text-gray-700 border border-gray-200">RESTful APIs &amp; WebSockets</span>
+<span class="px-2.5 py-1 rounded-md text-xs font-normal bg-white text-gray-700 border border-gray-200">CI/CD (Fastlane, TestFlight)</span>
+<span class="px-2.5 py-1 rounded-md text-xs font-normal bg-white text-gray-700 border border-gray-200">Git / GitHub Actions</span>
+<span class="px-2.5 py-1 rounded-md text-xs font-normal bg-white text-gray-700 border border-gray-200">XCTest &amp; UI Testing</span>
+<span class="px-2.5 py-1 rounded-md text-xs font-normal bg-white text-gray-700 border border-gray-200">Swift Package Manager (SPM)</span>
+</div>
+</div>
+</div>
+</details>
+<!-- Accordion 3: Languages Known -->
+<details class="group border border-[#EDEDED] rounded-xl overflow-hidden bg-white shadow-[0_1px_3px_rgba(0,0,0,0.02)]" open="">
+<summary class="flex items-center justify-between p-4 cursor-pointer select-none bg-white hover:bg-[#FAFAFA] transition">
+<div class="flex items-center gap-3">
+<span class="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center text-sm font-semibold">🌐</span>
+<span class="font-semibold text-sm sm:text-base text-[#2F3437]">Language Known</span>
+<span class="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">2 Languages</span>
+</div>
+<svg class="w-4 h-4 text-gray-400 arrow-indicator transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</summary>
+<div class="px-5 pb-5 pt-3 border-t border-[#EDEDED] grid grid-cols-1 sm:grid-cols-2 gap-3">
+<div class="p-3 rounded-lg border border-[#F0F0F0] bg-[#FAFAFA] flex items-center justify-between">
+<div>
+<h5 class="text-xs font-semibold text-gray-900">English</h5>
+<p class="text-[11px] text-gray-500">Fluent / Professional Working</p>
+</div>
+<span class="text-xs font-mono px-2 py-0.5 bg-white border border-gray-200 rounded text-gray-600">C1 Level</span>
+</div>
+<div class="p-3 rounded-lg border border-[#F0F0F0] bg-[#FAFAFA] flex items-center justify-between">
+<div>
+<h5 class="text-xs font-semibold text-gray-900">Hindi</h5>
+<p class="text-[11px] text-gray-500">Native Speaker</p>
+</div>
+<span class="text-xs font-mono px-2 py-0.5 bg-white border border-gray-200 rounded text-gray-600">Native</span>
+</div>
+</div>
+</details>
+</section>
+<!-- SECTION: Highlighted Projects & Experience -->
+<section class="space-y-4 pt-2" data-purpose="work-experience">
+<div class="flex items-center justify-between">
+<h3 class="text-base font-bold text-[#2F3437] flex items-center gap-2">
+<span class="">🚀</span> Key Engineering Accomplishments
+            </h3>
+<span class="text-xs text-gray-400 font-mono">2018 — Present</span>
+</div>
+<div class="space-y-3">
+<div class="p-4 rounded-xl border border-[#EDEDED] bg-white hover:border-gray-300 transition space-y-3"><div class="flex flex-wrap sm:flex-nowrap items-start justify-between gap-2"><div><h4 class="text-sm font-semibold text-gray-900">Daily ELD Plus — FMCSA-Approved Electronic Logbook (USA)</h4><p class="text-xs text-gray-500 mt-0.5">Electronic Logging Device &amp; Real-Time Fleet Compliance</p></div><div class="flex items-center gap-2 shrink-0"><span class="text-[11px] font-mono bg-blue-50 text-blue-700 px-2 py-0.5 rounded border border-blue-200">FMCSA / Logistics</span><a class="inline-flex items-center gap-1 text-[11px] font-medium bg-[#FAFAFA] hover:bg-gray-100 text-gray-700 px-2.5 py-0.5 rounded border border-gray-200 transition" href="https://apps.apple.com/in/app/daily-eld-plus/id6745337051" rel="noopener noreferrer" target="_blank"><svg class="w-3 h-3 text-gray-600" fill="currentColor" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.64-.78 1.08-1.86.96-2.95-1 .04-2.16.66-2.83 1.45-.59.68-1.12 1.77-.98 2.83 1.11.09 2.21-.55 2.85-1.33z"></path></svg>App Store<svg class="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg></a></div></div><p class="text-xs text-gray-600 leading-relaxed">Daily ELD Plus is an FMCSA-approved electronic logbook app that helps truck drivers manage HOS logs, track trips in real time, receive smart alerts, and stay compliant with an easy-to-use interface for fleets of any size.</p><div class="pt-1 border-t border-gray-100"><p class="text-[11px] font-medium text-gray-400 uppercase tracking-wider mb-1.5">Key Responsibilities &amp; Highlights</p><ul class="text-xs text-gray-600 space-y-1.5 list-disc list-inside"><li class="leading-relaxed">Designed, architected and implemented scalable Swift applications using Protocol-Oriented Programming and proven design patterns, including Delegate, Closure, and Factory patterns.</li><li class="leading-relaxed">Directly interact with clients to gather requirements and define the integration scope.</li><li class="leading-relaxed">Planned and executed features for Connect ELD automatic, Update Hours of days (Shift, Cycle, Break, Driver) time calculation, Dark Mode, Logs.</li><li class="leading-relaxed">Developed an interactive 24-hour duty status graph to track and visualize driver activities and status throughout the day.</li></ul></div><div class="flex flex-wrap gap-1.5 pt-2"><span class="text-[11px] px-2 py-0.5 bg-gray-100 text-gray-600 rounded">Swift</span><span class="text-[11px] px-2 py-0.5 bg-gray-100 text-gray-600 rounded">Xcode</span><span class="text-[11px] px-2 py-0.5 bg-gray-100 text-gray-600 rounded">Firebase Push Notifications</span><span class="text-[11px] px-2 py-0.5 bg-gray-100 text-gray-600 rounded">Google Maps</span></div></div>
+<div class="p-4 rounded-xl border border-[#EDEDED] bg-white hover:border-gray-300 transition space-y-3"><div class="flex flex-wrap sm:flex-nowrap items-start justify-between gap-2"><div><h4 class="text-sm font-semibold text-gray-900">Zuri Health — Telehealth &amp; Remote Medical Services App</h4><p class="text-xs text-gray-500 mt-0.5">On-Demand Healthcare, Virtual Consultations &amp; Digital Pharmacy</p></div><div class="flex items-center gap-2 shrink-0"><span class="text-[11px] font-mono bg-blue-50 text-blue-700 px-2 py-0.5 rounded border border-blue-200">HealthTech / Telemed</span><a class="inline-flex items-center gap-1 text-[11px] font-medium bg-[#FAFAFA] hover:bg-gray-100 text-gray-700 px-2.5 py-0.5 rounded border border-gray-200 transition" href="https://apps.apple.com/us/app/zuri-health/id1554395747" rel="noopener noreferrer" target="_blank"><svg class="w-3 h-3 text-gray-600" fill="currentColor" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.64-.78 1.08-1.86.96-2.95-1 .04-2.16.66-2.83 1.45-.59.68-1.12 1.77-.98 2.83 1.11.09 2.21-.55 2.85-1.33z"></path></svg>App Store<svg class="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg></a></div></div><p class="text-xs text-gray-600 leading-relaxed">Zuri Health is a mobile health service designed to help users receive medical services through their mobile devices via apps, WAP, and SMS, spanning six core features: Hospital, Doc on Duty, Pharmacy, Telemed, Doc at Home, and Test &amp; Diagnostics.</p><div class="pt-1 border-t border-gray-100"><p class="text-[11px] font-medium text-gray-400 uppercase tracking-wider mb-1.5">Key Responsibilities &amp; Highlights</p><ul class="text-xs text-gray-600 space-y-1.5 list-disc list-inside"><li class="leading-relaxed">Architected and developed the iOS application using Swift and Xcode, implementing a scalable and maintainable application structure.</li><li class="leading-relaxed">Developed an appointment booking system enabling users to schedule and manage healthcare appointments.</li><li class="leading-relaxed">Implemented in-app video and voice calling functionality for remote consultations with healthcare professionals.</li><li class="leading-relaxed">Developed digital prescription functionality, allowing users to receive and access prescriptions online after consultations.</li><li class="leading-relaxed">Implemented medicine booking and ordering functionality, enabling users to conveniently purchase medicines through the application.</li><li class="leading-relaxed">Collaborated closely with clients to gather feedback, guide development workflows.</li></ul></div><div class="flex flex-wrap gap-1.5 pt-2"><span class="text-[11px] px-2 py-0.5 bg-gray-100 text-gray-600 rounded">Swift</span><span class="text-[11px] px-2 py-0.5 bg-gray-100 text-gray-600 rounded">Socket Connection</span><span class="text-[11px] px-2 py-0.5 bg-gray-100 text-gray-600 rounded">Sinch SDK</span><span class="text-[11px] px-2 py-0.5 bg-gray-100 text-gray-600 rounded">VoIP Notification</span><span class="text-[11px] px-2 py-0.5 bg-gray-100 text-gray-600 rounded">Xcode</span><span class="text-[11px] px-2 py-0.5 bg-gray-100 text-gray-600 rounded">Telehealth APIs</span></div></div><div class="p-4 rounded-xl border border-[#EDEDED] bg-white hover:border-gray-300 transition space-y-3"><div class="flex flex-wrap sm:flex-nowrap items-start justify-between gap-2"><div><h4 class="text-sm font-semibold text-gray-900">JustGO — Fast Grocery Delivery App</h4><p class="text-xs text-gray-500 mt-0.5">Instant Supermarket &amp; Daily Essentials Delivery</p></div><div class="flex items-center gap-2 shrink-0"><span class="text-[11px] font-mono bg-blue-50 text-blue-700 px-2 py-0.5 rounded border border-blue-200">Quick Commerce / Logistics</span><a class="inline-flex items-center gap-1 text-[11px] font-medium bg-[#FAFAFA] hover:bg-gray-100 text-gray-700 px-2.5 py-0.5 rounded border border-gray-200 transition" href="https://apps.apple.com/ae/app/just-go-delivery/id1581942685" rel="noopener noreferrer" target="_blank"><svg class="w-3 h-3 text-gray-600" fill="currentColor" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.64-.78 1.08-1.86.96-2.95-1 .04-2.16.66-2.83 1.45-.59.68-1.12 1.77-.98 2.83 1.11.09 2.21-.55 2.85-1.33z"></path></svg>App Store<svg class="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg></a></div></div><p class="text-xs text-gray-600 leading-relaxed">JustGo delivers a revolutionary shopping experience, letting users order fresh groceries through the app and receive them within 10-30 minutes, at retail prices.</p><div class="pt-1 border-t border-gray-100"><p class="text-[11px] font-medium text-gray-400 uppercase tracking-wider mb-1.5">Key Responsibilities &amp; Highlights</p><ul class="text-xs text-gray-600 space-y-1.5 list-disc list-inside"><li class="leading-relaxed">Involved in the application architecture design, local database planning, and system integration.</li><li class="leading-relaxed">Built responsive user interfaces and integrated calling, search product based on category.</li><li class="leading-relaxed">Managed Apple Push Notifications integration for updated latest grocery products.</li><li class="leading-relaxed">Developed product ordering and shopping cart functionality, integrating secure payment processing through Apple Pay and Stripe.</li><li class="leading-relaxed">Handled client interaction, milestone planning, and App Store submission.</li></ul></div><div class="flex flex-wrap gap-1.5 pt-2"><span class="text-[11px] px-2 py-0.5 bg-gray-100 text-gray-600 rounded">Swift</span><span class="text-[11px] px-2 py-0.5 bg-gray-100 text-gray-600 rounded">Apple Pay</span><span class="text-[11px] px-2 py-0.5 bg-gray-100 text-gray-600 rounded">Stripe Pay</span><span class="text-[11px] px-2 py-0.5 bg-gray-100 text-gray-600 rounded">Firebase Analytics</span><span class="text-[11px] px-2 py-0.5 bg-gray-100 text-gray-600 rounded">Facebook Event Tracking</span><span class="text-[11px] px-2 py-0.5 bg-gray-100 text-gray-600 rounded">Amplitude</span><span class="text-[11px] px-2 py-0.5 bg-gray-100 text-gray-600 rounded">Firebase Deep Linking</span></div></div>
+</div>
+</section>
+</div>
+<!-- Right Column: Hire Card & Fast Verification Specs (4 cols) -->
+<aside class="lg:col-span-4 space-y-6" data-purpose="hire-widget-sidebar">
+<!-- Sticky Notion Action Box -->
+<div class="sticky top-20 border border-[#E5E5E5] rounded-xl p-5 bg-white shadow-sm space-y-5">
+<div>
+<div class="flex items-center justify-between text-xs text-gray-500 mb-1">
+<span class="">Hiring Model</span>
+<span class="font-medium text-emerald-600">Immediate Availability</span>
+</div>
+<div class="text-2xl font-bold text-gray-900">
+              Full-Time Dedicated
+            </div>
+<p class="text-xs text-gray-500 mt-1">
+              Directly managed by you, powered by Virtual Employee infrastructure.
+            </p>
+</div>
+<!-- Feature Bullets -->
+<ul class="text-xs text-gray-600 space-y-2.5 pt-2 border-t border-gray-100">
+<li class="flex items-center gap-2">
+<svg class="w-4 h-4 text-emerald-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path></svg>
+<span class=""><strong>1-Click Instant Onboarding</strong> (Start tomorrow)</span>
+</li>
+<li class="flex items-center gap-2">
+<svg class="w-4 h-4 text-emerald-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path></svg>
+<span class="">10 Working days zero commitment trial</span>
+</li>
+<li class="flex items-center gap-2">
+<svg class="w-4 h-4 text-emerald-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path></svg>
+<span class="">No credit card or deposit needed</span>
+</li>
+<li class="flex items-center gap-2">
+<svg class="w-4 h-4 text-emerald-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path></svg>
+<span class="">Equipment &amp; IP protection covered</span>
+</li>
+</ul>
+<!-- Primary CTA Button matching source design -->
+<div class="space-y-2 pt-2">
+<button class="w-full bg-[#FFDD00] hover:bg-[#F0CF00] text-gray-900 font-bold py-3 px-4 rounded-lg shadow-sm text-center text-sm transition active:scale-[0.99] border border-black/5" onclick="window.location.href='Fillform_screen_code.html'" type="button">
+              Start in 1-Click
+            </button>
+<p class="text-center text-[11px] text-gray-500">
+<strong>Dipesh</strong> is ready to start tomorrow
+            </p>
+</div>
+<div class="border-t border-gray-100 pt-4 flex items-center justify-between text-xs text-gray-500">
+<button class="hover:text-gray-900 flex items-center gap-1" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+              Download CV (.pdf)
+            </button>
+<button class="hover:text-gray-900 flex items-center gap-1" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+              Copy Link
+            </button>
+</div>
+</div>
+<!-- VE Screening Summary Box -->
+<div class="border border-[#EDEDED] rounded-xl p-4 bg-[#FBFBFA] space-y-3">
+<div class="text-xs font-semibold text-gray-900 uppercase tracking-wider">VE Screening Results</div>
+<div class="space-y-2 text-xs">
+<div class="flex items-center justify-between text-gray-600">
+<span class="">Technical Assessment</span>
+<span class="font-mono font-semibold text-gray-900">96 / 100</span>
+</div>
+<div class="w-full bg-gray-200 h-1.5 rounded-full overflow-hidden">
+<div class="bg-emerald-500 h-full w-[96%]"></div>
+</div>
+<div class="flex items-center justify-between text-gray-600 pt-1">
+<span class="">Code Quality &amp; Testing</span>
+<span class="font-mono font-semibold text-gray-900">Top 5%</span>
+</div>
+<div class="w-full bg-gray-200 h-1.5 rounded-full overflow-hidden">
+<div class="bg-blue-500 h-full w-[94%]"></div>
+</div>
+<div class="flex items-center justify-between text-gray-600 pt-1">
+<span class="">English Proficiency</span>
+<span class="font-mono font-semibold text-gray-900">Professional (Fluent)</span>
+</div>
+</div>
+<div class="pt-2 text-[11px] text-gray-400">
+            Verified by Virtual Employee iOS Technical Council in October 2026.
+          </div>
+</div>
+</aside>
+</div>
+</main>
+<!-- END: MainContent -->
+<!-- BEGIN: Footer -->
+<footer class="border-t border-[#EDEDED] bg-white mt-16 py-8 text-xs text-[#787774]" data-purpose="site-footer">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded bg-[#2F3437] text-white flex items-center justify-center text-[10px] font-mono font-bold">VE</span>
+<span class="">VirtualEmployee Directory • Verified Candidate Profiles</span>
+</div>
+<div class="flex items-center gap-6">
+<a class="hover:text-gray-900 transition" href="#">How Trial Works</a>
+<a class="hover:text-gray-900 transition" href="#">Security &amp; NDA</a>
+<a class="hover:text-gray-900 transition" href="#">Browse Engineers</a>
+<a class="hover:text-gray-900 transition" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+<!-- END: Footer -->
+<!-- Simple script for handling accordion states and interactive UX -->
+<script data-purpose="accordion-and-actions">
+    // Optional interactive feedback for buttons
+    document.addEventListener('DOMContentLoaded', () => {
+      const copyButtons = document.querySelectorAll('button');
+      copyButtons.forEach(btn => {
+        if(btn.textContent.includes('Copy Link')) {
+          btn.addEventListener('click', () => {
+            navigator.clipboard.writeText(window.location.href);
+            const originalText = btn.innerHTML;
+            btn.innerHTML = `<span class="text-emerald-600 font-semibold">✓ Copied!</span>`;
+            setTimeout(() => {
+              btn.innerHTML = originalText;
+            }, 2000);
+          });
+        }
+      });
+    });
+  </script>
+
+
+
+
+</body></html>
